@@ -3,18 +3,22 @@ import { FormGroup, FormControlLabel } from "@mui/material";
 import { MaterialUISwitch } from "./styles/MaterialUISwitch.styles";
 
 interface Props {
-  palletMode: "light" | "dark";
-  setPalletMode: React.Dispatch<React.SetStateAction<"light" | "dark">>;
+  mode: "light" | "dark";
+  setMode: React.Dispatch<React.SetStateAction<"light" | "dark">>;
+  toggle: () => void;
+  isDarkMode: boolean;
 }
-const Toggle = ({ palletMode, setPalletMode }: Props) => {
+const Toggle = ({ mode, setMode, toggle, isDarkMode }: Props) => {
   const handleMode = () => {
-    setPalletMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+    toggle();
   };
   return (
     <FormGroup>
-      <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} onClick={handleMode} />}
-        label=""
+      <MaterialUISwitch
+        sx={{ m: 1 }}
+        checked={isDarkMode}
+        onClick={handleMode}
       />
     </FormGroup>
   );

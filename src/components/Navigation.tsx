@@ -8,10 +8,12 @@ import Container from "@mui/material/Container";
 import Toggle from "./Toggle";
 
 interface Props {
-  palletMode: "light" | "dark";
-  setPalletMode: React.Dispatch<React.SetStateAction<"light" | "dark">>;
+  mode: "light" | "dark";
+  setMode: React.Dispatch<React.SetStateAction<"light" | "dark">>;
+  toggle: () => void;
+  isDarkMode: boolean;
 }
-const Navigation = ({ palletMode, setPalletMode }: Props) => {
+const Navigation = ({ mode, setMode, toggle, isDarkMode }: Props) => {
   return (
     <Box sx={{ flexGrow: 1, mb: "2rem" }}>
       <AppBar position="static">
@@ -31,7 +33,12 @@ const Navigation = ({ palletMode, setPalletMode }: Props) => {
               >
                 ToDo
               </Typography>
-              <Toggle palletMode={palletMode} setPalletMode={setPalletMode} />
+              <Toggle
+                mode={mode}
+                setMode={setMode}
+                toggle={toggle}
+                isDarkMode={isDarkMode}
+              />
             </Stack>
           </Toolbar>
         </Container>
