@@ -1,5 +1,5 @@
 import React from "react";
-import { FormGroup, FormControlLabel } from "@mui/material";
+import { FormGroup } from "@mui/material";
 import { MaterialUISwitch } from "./styles/MaterialUISwitch.styles";
 
 interface Props {

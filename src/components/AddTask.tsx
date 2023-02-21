@@ -6,7 +6,6 @@ import Modal from "@mui/material/Modal";
 import AddIcon from "@mui/icons-material/Add";
 import Form from "./Form";
 import Stack from "@mui/material/Stack";
-
 interface Props {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;

@@ -1,8 +1,6 @@
 import React from "react";
-import Stack from "@mui/material/Stack";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid"; // Grid version 1
-import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { todoModel } from "../context/todoModel";
 import TodoItem from "./TodoItem";
 
